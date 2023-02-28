@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-
-type Info = {
-  name: string;
-  job: string;
-  email: string;
-  phone: string;
-};
+import { returnInitialsWords } from "./utils/returnInitialsWords";
 
 function App() {
   const [info, setInfo] = useState<Info>({
@@ -14,12 +8,6 @@ function App() {
     email: "contenidos@igloo-lab.com",
     phone: "+57 123 456 789",
   });
-
-  const returnInitialsWords = (name: string) => {
-    const words = name.split(" ");
-    const initials = words.map((word) => word[0]);
-    return initials.join("");
-  };
 
   // get data from local storage
   const getData = () => {
@@ -30,7 +18,7 @@ function App() {
   };
 
   // save data to local storage
-  const saveData = (info : Info) => {
+  const saveData = (info: Info) => {
     localStorage.setItem("info", JSON.stringify(info));
   };
 
@@ -41,9 +29,7 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, [])
-  
-
+  }, []);
 
   return (
     <div className="App">
@@ -105,7 +91,7 @@ function App() {
           <tr>
             <td align="center">
               <img
-                src="https://igloolabserver.com/firma_2023/igloolab-2023.gif"
+                src="https://igloolab.co/firmas/igloolab-2023.gif"
                 style={{ width: "100%" }}
                 title="Igloo-Lab"
               />
@@ -149,7 +135,7 @@ function App() {
                 <span style={{ marginRight: "8px" }}>
                   <img
                     style={{ width: "25px" }}
-                    src="https://igloolabserver.com/firma_2023/icon-mail-2023.png"
+                    src="https://igloolab.co/firmas/icon-mail-2023.png"
                     title="Igloo-Lab"
                   />{" "}
                 </span>
@@ -174,7 +160,7 @@ function App() {
                 <span style={{ marginRight: "8px" }}>
                   <img
                     style={{ width: "25px" }}
-                    src="https://igloolabserver.com/firma_2023/icon-phone-2023.png"
+                    src="https://igloolab.co/firmas/icon-phone-2023.png"
                     title="Igloo-Lab"
                   />
                 </span>
@@ -189,7 +175,7 @@ function App() {
                 <span style={{ marginRight: "8px" }}>
                   <img
                     style={{ width: "25px", paddingLeft: "20px" }}
-                    src="https://igloolabserver.com/firma_2023/icon-site-2023.png"
+                    src="https://igloolab.co/firmas/icon-site-2023.png"
                     title="Igloo-Lab"
                   />
                 </span>
@@ -219,7 +205,7 @@ function App() {
               style={{ width: "420px", padding: "10px 0px" }}
             >
               <img
-                src="https://igloolabserver.com/firma_2023/firma-footer-2023.png"
+                src="https://igloolab.co/firmas/firma-footer-2023.png"
                 width="100%"
                 alt=""
               />
@@ -228,15 +214,13 @@ function App() {
         </tbody>
       </table>
 
-
       <footer>
         <p>
           hecho con{" "}
           <span role="img" aria-label="heart">
             ❤️
           </span>{" "}
-          por{" "}
-          Deimer Romero y Andrés Vizcaíno
+          por Deimer Romero y Andrés Vizcaíno
         </p>
       </footer>
     </div>
