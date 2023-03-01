@@ -5,7 +5,7 @@ function App() {
   const [info, setInfo] = useState<Info>({
     name: "Angela R. Colmenares",
     job: "PROJECT MANAGER",
-    email: "contenidos@igloo-lab.com",
+    email: "contenidos@igloolab.co",
     phone: "+57 123 456 789",
   });
 
